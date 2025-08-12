@@ -1,0 +1,179 @@
+<header>
+  <div class="logo">
+    <img src="assets/Logo.png" alt="MiraSin Logo" />
+    <div class="logo-text">
+      <h1>
+        MiraSin                 
+      </h1>
+      <p>Contabilidade, Fiscalidade, Auditoria e Gestão de Projetos</p>
+    </div>
+  </div>
+
+</header>
+<nav>
+  <ul>
+    <li><a href="#">Início</a></li>
+    <li>
+      <a href="#">Contactos</a>
+      <ul class="submenu">
+        <li><a href="#" (click)="abrirPopup('mirasin')">MiraSin</a></li>
+        <li>
+          <a href="#">Contactos Institucionais</a>
+          <ul class="submenu submenu-institucionais">
+            <li>
+              <a href="https://www.portaldasfinancas.gov.pt/at/html/index.html" target="_blank" rel="noopener noreferrer">
+                Autoridade Tributária
+              </a>
+            </li>
+            <li>
+              <a href="https://www.occ.pt/" target="_blank" rel="noopener noreferrer">OCC</a>
+            </li>
+            <li>
+              <a href="https://app.toconline.pt/" target="_blank" rel="noopener noreferrer">Toconline</a>
+            </li>
+            <li>
+              <a href="https://www.apotec.pt/homepage.php" target="_blank" rel="noopener noreferrer">APOTEC</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<main>
+<section class="intro">
+  <div class="intro-content">
+    <div class="intro-text">
+      <h2>Desde 1985</h2>
+      <p>Há mais de 40 anos a apoiar sociedades comerciais do setor não lucrativo.</p>
+      <p>
+        A permanente modernização dos processos possibilita acompanhar as exigências
+        que o Estado tem vindo a impor às organizações, sem perder de vista o controlo
+        interno e a informação de gestão.
+      </p>
+      <p>
+        Atualmente com acesso imediato e ilimitado a toda a informação de todas e de cada uma
+        das organizações a quem prestamos serviços.
+      </p>
+    </div>
+    <div class="intro-image">
+      <img src="assets/introIMG.jpg" alt="Pencil">
+    </div>
+  </div>
+</section>
+
+
+  <section class="services">
+    <h2>Serviços Disponíveis</h2>
+
+    <div class="service-cards">
+      <div class="card">
+        <h3>Contabilidade</h3>
+        <ul>
+          <li>Auditoria</li>
+          <li>Fiscalidade</li>
+        </ul>
+        <button (click)="abrirPopup('Contabilidade')">Solicitar Serviço</button>
+      </div>
+
+      <div class="card">
+        <h3>Salários</h3>
+        <ul>
+          <li>Segurança Social</li>
+        </ul>
+        <button (click)="abrirPopup('Salários')">Solicitar Serviço</button>
+      </div>
+
+      <div class="card">
+        <h3>Gestão de Projetos</h3>
+        <ul>
+       
+        </ul>
+        <button (click)="abrirPopup('Gestão de Projetos')">Solicitar Serviço</button>
+      </div>
+
+      <div class="card">
+        <h3>Gestão de Condomínios</h3>
+        <ul>
+          <li>Serviços a Condomínios</li>
+        </ul>
+        <button (click)="abrirPopup('Gestão de Condomínios')">Solicitar Serviço</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="contactos">
+    <h2>Contactos</h2>
+    <p><strong>MiraSin, Lda</strong><br />
+      Rua das Acácias, 7 A<br />
+      Mira Sintra<br />
+      2735-503 AGUALVA-CACÉM</p>
+      Telefone: 930 600 365 <br />
+    <p>Email: <a href="mailto:geral@mirasin.pt">geral&#64;mirasin.pt</a></p>
+  </section>
+</main>
+
+<!-- Popup MiraSin -->
+<div class="popup" *ngIf="popupEstaAberto('mirasin')" (click)="fecharPopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <h3>Contactos MiraSin</h3>
+    <p>Rua das Acácias, 7 A</p>
+    <p>Mira Sintra</p>
+    <p>2735-503 AGUALVA-CACÉM</p>
+    <p>Telefone: 930 600 365</p>
+    <p>Email: <a href="mailto:geral@mirasin.pt">geral&#64;mirasin.pt</a></p>
+    <button (click)="fecharPopup()">Fechar</button>
+  </div>
+</div>
+
+<!-- Popup de Serviços Simplificado -->
+<div class="popup" *ngIf="popupEstaAberto('Contabilidade')" (click)="fecharPopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <h3>Solicitar serviço de Contabilidade</h3>
+    <img src="assets/lupa.jpg" alt="Lupa" class="popup-img">
+    <p>
+      <a href="mailto:geral@mirasin.pt?subject=Contabilidade">geral&#64;mirasin.pt</a>
+    </p>
+    <button (click)="fecharPopup()">Fechar</button>
+  </div>
+</div>
+
+
+<div class="popup" *ngIf="popupEstaAberto('Salários')" (click)="fecharPopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <h3>Solicitar serviço de Salários</h3>
+    <img src="assets/dinheiro.jpg" alt="Dinheiro" class="popup-img">
+    <p>
+      <a href="mailto:geral@mirasin.pt?subject=Salarios">geral&#64;mirasin.pt</a>
+    </p>
+    <button (click)="fecharPopup()">Fechar</button>
+  </div>
+</div>
+
+<div class="popup" *ngIf="popupEstaAberto('Gestão de Projetos')" (click)="fecharPopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <h3>Solicitar serviço de Gestão de Projetos</h3>
+    <img src="assets/gestao.png" alt="Gestão" class="popup-img">
+    <p>
+      <a href="mailto:geral@mirasin.pt?subject=Gestao%20de%20Projetos">geral&#64;mirasin.pt</a>
+    </p>
+    <button (click)="fecharPopup()">Fechar</button>
+  </div>
+</div>
+
+
+<div class="popup" *ngIf="popupEstaAberto('Gestão de Condomínios')" (click)="fecharPopup()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <h3>Solicitar serviço de Gestão de Condomínios</h3>
+    <img src="assets/condominios.png" alt="Condomínios" class="popup-img">
+    <p>
+      <a href="mailto:geral@mirasin.pt?subject=Gestao%20de%20Condominios">geral&#64;mirasin.pt</a>
+    </p>
+    <button (click)="fecharPopup()">Fechar</button>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 MiraSin. Todos os direitos reservados.</p>
+</footer>
